@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "audacia-llm-eval"
+version = "0.1.0"
+description = ""
+authors = ["Tom Cooper <Tom.Cooper@audacia.co.uk>", "Ryan Crompton <Ryan.Crompton@audacia.co.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+arthur-bench = {git = "https://github.com/RyanCrompton/bench", rev = "main"}
+langchain-openai = "^0.1.3"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.scripts]
+test = "audacia-llm-eval.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
