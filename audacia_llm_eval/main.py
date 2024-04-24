@@ -36,6 +36,7 @@ def test():
         "first_example_txt_test",
         "exact_match",
         f"{script_dir}/csvs/test_txt.csv",
+        f"{script_dir}/csvs/inputs",
         f"{script_dir}/csvs/outputs"
     )
 

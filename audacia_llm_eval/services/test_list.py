@@ -34,19 +34,28 @@ class TestList:
                           test_name: str,
                           scoring_method: str,
                           csv_path: str,
-                          txt_file_root: Optional[str] = None,
+                          input_file_root: Optional[str] = None,
+                          output_file_root: Optional[str] = None,
                           input_column: str = "input",
-                          txt_path_column: str = "txt_file") -> None:
+                          expected_output_column: str = "expected_output") -> None:
         print(f'Adding test {test_name} from txt files...')
         data = pandas.read_csv(csv_path)
-        inputs = data[input_column]
-        txt_files = data[txt_path_column]
+        inputs_txt_files = data[input_column]
+        output_txt_files = data[expected_output_column]
+
+        inputs = []
+        for txt_file in inputs_txt_files:
+            txt_path = txt_file
+            if input_file_root is not None:
+                txt_path = create_file_path(input_file_root, txt_file)
+            content = read_file(txt_path)
+            inputs.append(content)
 
         expected_outputs = []
-        for txt_file in txt_files:
+        for txt_file in output_txt_files:
             txt_path = txt_file
-            if txt_file_root is not None:
-                txt_path = create_file_path(txt_file_root, txt_file)
+            if output_file_root is not None:
+                txt_path = create_file_path(output_file_root, txt_file)
             content = read_file(txt_path)
             expected_outputs.append(content)
 

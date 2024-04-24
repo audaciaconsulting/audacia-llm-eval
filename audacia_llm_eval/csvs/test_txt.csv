@@ -1,2 +1,2 @@
-input,txt_file
-Test,"outputs/test.txt"
+input,expected_output
+test_input.txt,test_output.txt
