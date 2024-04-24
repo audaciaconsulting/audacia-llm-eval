@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "audacia-llm-eval"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Tom Cooper <Tom.Cooper@audacia.co.uk>", "Ryan Crompton <Ryan.Crompton@audacia.co.uk>"]
 readme = "README.md"
